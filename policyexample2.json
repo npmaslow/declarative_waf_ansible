@@ -1,0 +1,189 @@
+{
+   "policy" : {
+      "applicationLanguage" : "utf-8",
+      "caseInsensitive" : false,
+      "description" : "PolicyApp01 Description Example",
+      "disallowed-geolocations" : [
+         {
+            "countryCode" : "AS",
+            "countryName" : "American Samoa"
+         },
+         {
+            "countryCode" : "RU",
+            "countryName" : "Russian Federation"
+         }
+      ],
+      "enablePassiveMode" : false,
+      "enforcementMode" : "blocking",
+      "filetypes" : [
+         {
+            "allowed" : false,
+            "name" : "foo"
+         }
+      ],
+      "fullPath" : "/aws_gateway_tenant/aws_gateway/PolicyApp01",
+      "name" : "PolicyApp01",
+      "protocolIndependent" : false,
+      "server-technologies" : [
+         {
+            "serverTechnologyName" : "MySQL"
+         }
+      ],
+      "signature-sets" : [
+         {
+            "alarm" : true,
+            "block" : true,
+            "learn" : false,
+            "name" : "Log4j Apache Signature Set",
+            "signatureSet" : {
+               "signatures" : [
+                  {
+                     "signatureId" : "200004450"
+                  },
+                  {
+                     "signatureId" : "200004451"
+                  },
+                  {
+                     "signatureId" : "200004474"
+                  }
+               ],
+               "systems" : [],
+               "type" : "manual"
+            }
+         },
+         {
+            "alarm" : true,
+            "block" : false,
+            "learn" : true,
+            "name" : "HighAcuracySignaturesSet",
+            "signatureSet" : {
+               "filter" : {
+                  "accuracyFilter" : "eq",
+                  "accuracyValue" : "high",
+                  "hasCve" : "all",
+                  "lastUpdatedFilter" : "all",
+                  "riskFilter" : "ge",
+                  "riskValue" : "medium",
+                  "signatureType" : "request",
+                  "tagFilter" : "untagged",
+                  "tagValue" : "",
+                  "userDefinedFilter" : "all"
+               },
+               "systems" : [],
+               "type" : "filter-based"
+            }
+         },
+         {
+            "alarm" : true,
+            "block" : true,
+            "learn" : false,
+            "name" : "Log4j Apache Signature Set_1",
+            "signatureSet" : {
+               "signatures" : [
+                  {
+                     "signatureId" : "200004450"
+                  },
+                  {
+                     "signatureId" : "200004451"
+                  },
+                  {
+                     "signatureId" : "200004474"
+                  }
+               ],
+               "systems" : [],
+               "type" : "manual"
+            }
+         },
+         {
+            "alarm" : true,
+            "block" : true,
+            "learn" : false,
+            "name" : "Log4j Apache Signature Set_2",
+            "signatureSet" : {
+               "signatures" : [
+                  {
+                     "signatureId" : "200004450"
+                  },
+                  {
+                     "signatureId" : "200004451"
+                  },
+                  {
+                     "signatureId" : "200004474"
+                  },
+                  {
+                     "signatureId" : "200104768"
+                  },
+                  {
+                     "signatureId" : "200104769"
+                  },
+                  {
+                     "signatureId" : "200104770"
+                  },
+                  {
+                     "signatureId" : "200104771"
+                  },
+                  {
+                     "signatureId" : "200104772"
+                  },
+                  {
+                     "signatureId" : "200104773"
+                  }
+               ],
+               "systems" : [],
+               "type" : "manual"
+            }
+         },
+         {
+            "alarm" : true,
+            "block" : true,
+            "learn" : true,
+            "name" : "MySQL Signatures (High/Medium Accuracy)",
+            "signatureSet" : {
+               "filter" : {
+                  "accuracyFilter" : "ge",
+                  "accuracyValue" : "medium",
+                  "hasCve" : "all",
+                  "lastUpdatedFilter" : "all",
+                  "riskFilter" : "all",
+                  "riskValue" : "all",
+                  "signatureType" : "all",
+                  "tagFilter" : "untagged",
+                  "tagValue" : "",
+                  "userDefinedFilter" : "all"
+               },
+               "systems" : [
+                  {
+                     "name" : "MySQL"
+                  }
+               ],
+               "type" : "filter-based"
+            }
+         }
+      ],
+      "signature-settings" : {
+         "signatureStaging" : false
+      },
+      "signatures" : [
+         {
+            "enabled" : false,
+            "performStaging" : false,
+            "signatureId" : "200101552"
+         }
+      ],
+      "softwareVersion" : "16.1.3",
+      "template" : {
+         "name" : "POLICY_TEMPLATE_RAPID_DEPLOYMENT"
+      },
+      "type" : "security",
+      "whitelist-ips" : [
+         {
+            "blockRequests" : "always",
+            "description" : "always block this ip address",
+            "ipAddress" : "10.0.0.1",
+            "ipMask" : "255.255.255.255",
+            "neverLearnRequests" : false
+         }
+      ]
+   }
+}
+
